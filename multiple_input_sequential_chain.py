@@ -7,7 +7,6 @@ from langchain.chains import SequentialChain
 import dotenv
 import os
 
-
 dotenv.load_dotenv()
 api_key = os.getenv('OPENAI_API_KEY')
 
@@ -62,7 +61,7 @@ chain_4 = LLMChain(llm=llm, prompt=prompt_4, output_key="summary")
 final_chain = SequentialChain(
     chains=[chain_1, chain_2, chain_3, chain_4],
     input_variables=["biography"],
-    output_variables=["one_line_biography", "author_name","summary"],
+    output_variables=["one_line_biography", "author_name", "summary"],
     verbose=True
 )
 
